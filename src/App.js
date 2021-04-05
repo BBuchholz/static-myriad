@@ -1,4 +1,5 @@
-import logo from './logo.svg';
+//import logo from './logo.svg';
+import logo from './logo-seal.svg';
 import './App.css';
 
 function App() {
