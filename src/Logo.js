@@ -1,5 +1,4 @@
 import React from 'react';
-//import ReactDOM from 'react-dom';
 import logoArt from './logo-seal.svg';
 
 class Logo extends React.Component {
