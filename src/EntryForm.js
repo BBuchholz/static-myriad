@@ -4,39 +4,39 @@ import React from 'react';
 // https://www.w3schools.com/react/react_forms.asp
 //
 // CURRENT SECTION:
-// "Multiple Input Fields"
+// "Textarea"
 //
 
 class EntryForm extends React.Component {
     constructor(props){
         super(props);
-        this.state = { enteredText: '' };
-    }
-    mySubmitHandler = (event) => {
-        event.preventDefault();
-        alert("You are submitting " + this.state.enteredText);
+        this.state = { 
+            entryText: '',
+            tagString: '', 
+        };
     }
     myChangeHandler = (event) => {
-        this.setState({enteredText: event.target.value});
+        let nam = event.target.name;
+        let val = event.target.value;
+        this.setState({[nam]: val});
     }
     render() {
-        // let displayText = '';
-        // if(this.state.enteredText){
-        //     displayText = <p>Entered text: {this.state.enteredText}</p>;
-        // } else {
-        //     displayText = '';
-        // }
         return(
-            <form onSubmit={this.mySubmitHandler}>
+            <form>
                 <h1>Welcome To Myriad!</h1>
-                {/* {displayText} */}
-                <p>Entered text: {this.state.enteredText}</p>
+                <p>Entry Text: {this.state.entryText}</p>
+                <p>Tags: {this.state.tagString}</p>
+                <p>Entry Text: </p>
                 <input 
                     type="text"
+                    name="entryText"
                     onChange={this.myChangeHandler}
                 />
-                <input
-                    type='submit'
+                <p>Tags: </p>
+                <input 
+                    type="text"
+                    name="tagString"
+                    onChange={this.myChangeHandler}
                 />
             </form>
         );
