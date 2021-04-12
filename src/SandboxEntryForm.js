@@ -20,33 +20,59 @@ class SandboxEntryForm extends React.Component {
         let val = event.target.value;
         this.setState({[nam]: val});
     }
+    myResetHandler = (event) => {
+        event.preventDefault();
+        this.setState({ 
+            entryText: '',
+            tagString: '', 
+        });
+        document.getElementById("tagStringInput").value = "";
+        document.getElementById("entryTextArea").value = "";
+        document.getElementById("xmlOutput").innerHTML = "";
+    }
     mySubmitHandler = (event) => {
         event.preventDefault();
-        alert("You are submitting " + JSON.stringify(this.state));
+        let message = "Current state \n" + 
+            JSON.stringify(this.state, null, 2);
+        // alert(message);        
+        document.getElementById('xmlOutput').innerText = message;
     }
     render() {
         return(
-            <form onSubmit={this.mySubmitHandler}>
-                <h1>Welcome To Myriad!</h1>
-                <p>Tags: </p>
-                <input 
-                    type="text"
-                    name="tagString"
-                    onChange={this.myChangeHandler}
-                />
-                <p>Entry Text: </p>
-                <textarea 
-                    name="entryText"
-                    onChange={this.myChangeHandler}
-                />
-                <input
-                    type='submit'
-                />
+
+            <div>
+                <form 
+                    id="myForm"
+                    onSubmit={this.mySubmitHandler}
+                >
+                    <h1>Welcome To Myriad!</h1>
+                    <p>Tags: </p>
+                    <input 
+                        type="text"
+                        name="tagString"
+                        id="tagStringInput"
+                        onChange={this.myChangeHandler}
+                    />
+                    <p>Entry Text: </p>
+                    <textarea 
+                        name="entryText"
+                        id="entryTextArea"
+                        onChange={this.myChangeHandler}
+                    />
+                    <input
+                        type='submit'
+                    /> 
+                    <input 
+                        type="button" 
+                        name="resetButton" 
+                        value="Reset" 
+                        onClick={this.myResetHandler}
+                    />                                   
+                </form>
                 <p>XML OUTPUT: </p>
-                <textarea 
-                    name="xmlOutput"
-                />
-            </form>
+                <pre id="xmlOutput"/>
+                <button>Copy Output To Clipboard</button>
+            </div>
         );
     }
 }
