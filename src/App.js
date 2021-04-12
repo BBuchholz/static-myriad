@@ -1,6 +1,6 @@
 import './App.css';
 import Logo from './Logo';
-import EntryForm from './EntryForm';
+import SandboxEntryForm from './SandboxEntryForm';
 import Footer from './Footer';
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
             <Logo />    
         </div>        
         <div>
-            <EntryForm />
+            <SandboxEntryForm />
         </div>
         <div>
             <Footer />
