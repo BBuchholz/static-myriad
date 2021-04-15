@@ -13,6 +13,7 @@ class SandboxEntryForm extends React.Component {
         this.state = { 
             entryText: '',
             tagString: '', 
+            xmlOutput: 'xml not yet generated',
         };
     }
     myChangeHandler = (event) => {
@@ -25,6 +26,7 @@ class SandboxEntryForm extends React.Component {
         this.setState({ 
             entryText: '',
             tagString: '', 
+            xmlOutput: 'xml not yet generated',
         });
         document.getElementById("tagStringInput").value = "";
         document.getElementById("entryTextArea").value = "";
@@ -35,7 +37,8 @@ class SandboxEntryForm extends React.Component {
         let message = "Current state \n" + 
             JSON.stringify(this.state, null, 2);
         // alert(message);        
-        document.getElementById('xmlOutput').innerText = message;
+        //document.getElementById('xmlOutput').innerText = message;
+        this.setState({xmlOutput: message});
     }
     render() {
         return(
@@ -70,7 +73,9 @@ class SandboxEntryForm extends React.Component {
                     />                                   
                 </form>
                 <p>XML OUTPUT: </p>
-                <pre id="xmlOutput"/>
+                <pre id="xmlOutput">
+                    {this.state.xmlOutput}
+                </pre>
                 <button>Copy Output To Clipboard</button>
             </div>
         );
