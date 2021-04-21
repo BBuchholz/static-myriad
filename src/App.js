@@ -1,8 +1,10 @@
 import './App.css';
 import SplashScreen from './SplashScreen';
 import SandboxEntryForm from './SandboxEntryForm';
+
+import React from 'react';
 import {
-  BrowserRouter as Router,
+  MemoryRouter as Router,
   Switch,
   Route,
   Link,
@@ -10,39 +12,52 @@ import {
   useParams
 } from "react-router-dom";
 
+import Jumbotron from 'react-bootstrap/Jumbotron';
+import Container from 'react-bootstrap/Container';
+import Button from 'react-bootstrap/Button';
+import ButtonToolbar from 'react-bootstrap/ButtonToolbar';
+import { LinkContainer } from 'react-router-bootstrap';
+
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <Router>
-            <div>
-                <ul>
-                <li>
-                    <Link to="/">Home</Link>
-                </li>
-                <li>
-                    <Link to="/about">About</Link>
-                </li>
-                <li>
-                    <Link to="/wxrds">Wxrds</Link>
-                </li>
-                </ul>
-
-                <Switch>
-                <Route path="/about">
-                    <SplashScreen />
-                </Route>
-                <Route path="/Wxrds">
-                    <Wxrds />
-                </Route>
-                <Route path="/">
-                    <SandboxEntryForm />
-                </Route>
-                </Switch>
-            </div>
-        </Router>
-
-      </header>
+        <header className="App-header">
+            <Router>
+                <Container className="p-3">
+                    <Jumbotron>
+                        <h1 className="header">Welcome To React-Bootstrap</h1>
+                        <h2>
+                            Current Page is{' '}
+                            <Switch>
+                                <Route path="/about">
+                                    <SplashScreen />
+                                </Route>
+                                <Route path="/users">
+                                    <Wxrds />
+                                </Route>
+                                <Route path="/">
+                                    <SandboxEntryForm />
+                                </Route>
+                            </Switch>
+                        </h2>
+                        <h2>
+                            Navigate to{' '}
+                            <ButtonToolbar className="custom-btn-toolbar">
+                                <LinkContainer to="/">
+                                    <Button>Home</Button>
+                                </LinkContainer>
+                                <LinkContainer to="/about">
+                                    <Button>About</Button>
+                                </LinkContainer>
+                                <LinkContainer to="/wxrds">
+                                    <Button>Wxrds</Button>
+                                </LinkContainer>
+                            </ButtonToolbar>
+                        </h2>
+                    </Jumbotron>
+                </Container>
+            </Router>
+        </header>
     </div>
   );
 }
