@@ -4,7 +4,7 @@ import SandboxEntryForm from './SandboxEntryForm';
 
 import React from 'react';
 import {
-  MemoryRouter as Router,
+  BrowserRouter as Router,
   Switch,
   Route,
   Link,
@@ -14,9 +14,7 @@ import {
 
 import Jumbotron from 'react-bootstrap/Jumbotron';
 import Container from 'react-bootstrap/Container';
-import Button from 'react-bootstrap/Button';
-import ButtonToolbar from 'react-bootstrap/ButtonToolbar';
-import { LinkContainer } from 'react-router-bootstrap';
+import MyriadNavBar from './MyriadNavBar';
 
 function App() {
   return (
@@ -25,6 +23,7 @@ function App() {
             <Router>
                 <Container className="p-3">
                     <Jumbotron>
+                        <MyriadNavBar />
                         <h1 className="header">Welcome To React-Bootstrap</h1>
                         <h2>
                             Current Page is{' '}
@@ -32,28 +31,14 @@ function App() {
                                 <Route path="/about">
                                     <SplashScreen />
                                 </Route>
-                                <Route path="/users">
+                                <Route path="/wxrds">
                                     <Wxrds />
                                 </Route>
                                 <Route path="/">
                                     <SandboxEntryForm />
                                 </Route>
                             </Switch>
-                        </h2>
-                        <h2>
-                            Navigate to{' '}
-                            <ButtonToolbar className="custom-btn-toolbar">
-                                <LinkContainer to="/">
-                                    <Button>Home</Button>
-                                </LinkContainer>
-                                <LinkContainer to="/about">
-                                    <Button>About</Button>
-                                </LinkContainer>
-                                <LinkContainer to="/wxrds">
-                                    <Button>Wxrds</Button>
-                                </LinkContainer>
-                            </ButtonToolbar>
-                        </h2>
+                        </h2>                        
                     </Jumbotron>
                 </Container>
             </Router>
