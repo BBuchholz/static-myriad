@@ -1,6 +1,9 @@
 import './App.css';
 import SplashScreen from './SplashScreen';
 import SandboxEntryForm from './SandboxEntryForm';
+import MyriadNavBar from './MyriadNavBar';
+import MyriadXmlIOPanel from './MyriadXmlIOPanel';
+import MyriadLogEntryForm from './MyriadLogEntryForm';
 
 import React from 'react';
 import {
@@ -14,7 +17,6 @@ import {
 
 import Jumbotron from 'react-bootstrap/Jumbotron';
 import Container from 'react-bootstrap/Container';
-import MyriadNavBar from './MyriadNavBar';
 
 function App() {
   return (
@@ -24,15 +26,20 @@ function App() {
                 <Container className="p-3">
                     <Jumbotron>
                         <MyriadNavBar />
-                        <h1 className="header">Welcome To React-Bootstrap</h1>
+                        <h1 className="header">Myriad</h1>
                         <h2>
-                            Current Page is{' '}
                             <Switch>
                                 <Route path="/about">
                                     <SplashScreen />
                                 </Route>
                                 <Route path="/wxrds">
                                     <Wxrds />
+                                </Route>
+                                <Route path="/xmlio">
+                                    <MyriadXmlIOPanel />
+                                </Route>
+                                <Route path="/log-entry">
+                                    <MyriadLogEntryForm />
                                 </Route>
                                 <Route path="/">
                                     <SandboxEntryForm />

@@ -48,7 +48,6 @@ class SandboxEntryForm extends React.Component {
                     id="myForm"
                     onSubmit={this.mySubmitHandler}
                 >
-                    <h1>Welcome To Myriad!</h1>
                     <p>Tags: </p>
                     <input 
                         type="text"

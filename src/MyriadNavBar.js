@@ -12,13 +12,19 @@ class MyriadNavBar extends React.Component {
                 <h2>
                     <ButtonToolbar className="custom-btn-toolbar">
                         <LinkContainer to="/">
-                            <Button>Home</Button>
+                            <Button>[Home]</Button>
                         </LinkContainer>
                         <LinkContainer to="/about">
-                            <Button>About</Button>
+                            <Button>[About]</Button>
                         </LinkContainer>
                         <LinkContainer to="/wxrds">
-                            <Button>Wxrds</Button>
+                            <Button>[Wxrds]</Button>
+                        </LinkContainer>
+                        <LinkContainer to="/xmlio">
+                            <Button>[XmlIOPanel]</Button>
+                        </LinkContainer>
+                        <LinkContainer to="/log-entry">
+                            <Button>[LogEntry]</Button>
                         </LinkContainer>
                     </ButtonToolbar>
                 </h2>
