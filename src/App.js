@@ -29,9 +29,6 @@ function App() {
                         <h1 className="header">Myriad</h1>
                         <h2>
                             <Switch>
-                                <Route path="/about">
-                                    <SplashScreen />
-                                </Route>
                                 <Route path="/wxrds">
                                     <Wxrds />
                                 </Route>
@@ -41,8 +38,11 @@ function App() {
                                 <Route path="/log-entry">
                                     <MyriadLogEntryForm />
                                 </Route>
-                                <Route path="/">
+                                <Route path="/log-entry-prev">
                                     <SandboxEntryForm />
+                                </Route>
+                                <Route path="/">
+                                    <SplashScreen />
                                 </Route>
                             </Switch>
                         </h2>                        
