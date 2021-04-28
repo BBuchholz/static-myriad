@@ -14,20 +14,12 @@ class OldMyriadNavBar extends React.Component {
                         <LinkContainer to="/log-entry-prev">
                             <Button>[PrevLogEntry]</Button>
                         </LinkContainer>
-                        <LinkContainer to="/">
-                            <Button>[About]</Button>
-                        </LinkContainer>
-                        <LinkContainer to="/wxrds">
-                            <Button>[Wxrds]</Button>
-                        </LinkContainer>
-                        <LinkContainer to="/xmlio">
-                            <Button>[XmlIOPanel]</Button>
-                        </LinkContainer>
                         <LinkContainer to="/log-entry">
                             <Button>[LogEntry]</Button>
                         </LinkContainer>
                     </ButtonToolbar>
                 </h2>
+                <p>[ABOVE -> OldMyriadNavBar: delete buttons as replaced with new navigation, remove old bar when all buttons are gone...]</p>
             </div>
         );
     }
