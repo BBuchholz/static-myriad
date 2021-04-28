@@ -1,6 +1,6 @@
 import React from 'react';
 
-class MyriadXmlIOPanel extends React.Component {
+class OldMyriadXmlIOPanel extends React.Component {
     
     render() {
         return(
@@ -12,4 +12,4 @@ class MyriadXmlIOPanel extends React.Component {
     }
 }
 
-export default MyriadXmlIOPanel;
+export default OldMyriadXmlIOPanel;

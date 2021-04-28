@@ -1,7 +1,7 @@
 import React from 'react';
 import Form from 'react-bootstrap/Form';
 
-class MyriadLogEntryForm extends React.Component {
+class OldMyriadLogEntryForm extends React.Component {
     render() {
         return(
             <div>
@@ -20,4 +20,4 @@ class MyriadLogEntryForm extends React.Component {
     }
 }
 
-export default MyriadLogEntryForm;
+export default OldMyriadLogEntryForm;

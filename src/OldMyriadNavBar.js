@@ -3,7 +3,7 @@ import Button from 'react-bootstrap/Button';
 import ButtonToolbar from 'react-bootstrap/ButtonToolbar';
 import { LinkContainer } from 'react-router-bootstrap';
 
-class MyriadNavBar extends React.Component {
+class OldMyriadNavBar extends React.Component {
     
     render() {
         return(
@@ -33,4 +33,4 @@ class MyriadNavBar extends React.Component {
     }
 }
 
-export default MyriadNavBar;
+export default OldMyriadNavBar;

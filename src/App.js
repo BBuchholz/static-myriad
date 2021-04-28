@@ -1,9 +1,9 @@
 import './App.css';
 import SplashScreen from './SplashScreen';
 import SandboxEntryForm from './SandboxEntryForm';
-import MyriadNavBar from './MyriadNavBar';
-import MyriadXmlIOPanel from './MyriadXmlIOPanel';
-import MyriadLogEntryForm from './MyriadLogEntryForm';
+import OldMyriadNavBar from './OldMyriadNavBar';
+import OldMyriadXmlIOPanel from './OldMyriadXmlIOPanel';
+import OldMyriadLogEntryForm from './OldMyriadLogEntryForm';
 
 import React from 'react';
 import {
@@ -25,7 +25,7 @@ function App() {
             <Router>
                 <Container className="p-3">
                     <Jumbotron>
-                        <MyriadNavBar />
+                        <OldMyriadNavBar />
                         <h1 className="header">Myriad</h1>
                         <h2>
                             <Switch>
@@ -33,10 +33,10 @@ function App() {
                                     <Wxrds />
                                 </Route>
                                 <Route path="/xmlio">
-                                    <MyriadXmlIOPanel />
+                                    <OldMyriadXmlIOPanel />
                                 </Route>
                                 <Route path="/log-entry">
-                                    <MyriadLogEntryForm />
+                                    <OldMyriadLogEntryForm />
                                 </Route>
                                 <Route path="/log-entry-prev">
                                     <SandboxEntryForm />
