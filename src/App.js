@@ -1,12 +1,13 @@
-import './App.css';
+import './App.scss';
 import SplashScreen from './SplashScreen';
 import SandboxEntryForm from './SandboxEntryForm';
 import OldMyriadNavBar from './OldMyriadNavBar';
 import OldMyriadXmlIOPanel from './OldMyriadXmlIOPanel';
 import OldMyriadLogEntryForm from './OldMyriadLogEntryForm';
+import MyriadNavBarMain from './MyriadNavBarMain';
 
 import React from 'react';
-import {
+import { 
   BrowserRouter as Router,
   Switch,
   Route,
@@ -15,42 +16,37 @@ import {
   useParams
 } from "react-router-dom";
 
-import Jumbotron from 'react-bootstrap/Jumbotron';
+//import Jumbotron from 'react-bootstrap/Jumbotron';
 import Container from 'react-bootstrap/Container';
 
 function App() {
   return (
-    <div className="App">
-        <header className="App-header">
-            <Router>
-                <Container className="p-3">
-                    <Jumbotron>
-                        <OldMyriadNavBar />
-                        <h1 className="header">Myriad</h1>
-                        <h2>
-                            <Switch>
-                                <Route path="/wxrds">
-                                    <Wxrds />
-                                </Route>
-                                <Route path="/xmlio">
-                                    <OldMyriadXmlIOPanel />
-                                </Route>
-                                <Route path="/log-entry">
-                                    <OldMyriadLogEntryForm />
-                                </Route>
-                                <Route path="/log-entry-prev">
-                                    <SandboxEntryForm />
-                                </Route>
-                                <Route path="/">
-                                    <SplashScreen />
-                                </Route>
-                            </Switch>
-                        </h2>                        
-                    </Jumbotron>
-                </Container>
-            </Router>
-        </header>
-    </div>
+    <Router>
+        <Container fluid="md">
+            <MyriadNavBarMain />
+            <OldMyriadNavBar />
+                <h1 className="header">Myriad</h1>
+                <h2>
+                    <Switch>
+                        <Route path="/wxrds">
+                            <Wxrds />
+                        </Route>
+                        <Route path="/xmlio">
+                            <OldMyriadXmlIOPanel />
+                        </Route>
+                        <Route path="/log-entry">
+                            <OldMyriadLogEntryForm />
+                        </Route>
+                        <Route path="/log-entry-prev">
+                            <SandboxEntryForm />
+                        </Route>
+                        <Route path="/">
+                            <SplashScreen />
+                        </Route>
+                    </Switch>
+                </h2>
+        </Container>
+    </Router>
   );
 }
 
