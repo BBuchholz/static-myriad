@@ -17,13 +17,14 @@ function MyriadNavBarMain() {
 
   return (
     <Navbar bg="light" expand="lg">
-        <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+        <Navbar.Brand href="/">Myriad</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
   <Navbar.Collapse id="basic-navbar-nav">
     <Nav className="mr-auto">
-      <Nav.Link href="#home">Home</Nav.Link>
-      <Nav.Link href="#link">Link</Nav.Link>
-      
+      <Nav.Link href="/entries">Entries</Nav.Link>
+      <Nav.Link href="/wxrds">Wxrds</Nav.Link>
+      <Nav.Link href="/xmlio">XML I/O</Nav.Link>
+      <Nav.Link href="/">About</Nav.Link>
     </Nav>
   </Navbar.Collapse>
 </Navbar>
