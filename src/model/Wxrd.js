@@ -19,12 +19,17 @@ class Wxrd {
         return uuidv4();
     }
 
-    retrieveTagsByPrefix(prefix){
+    /**
+     * 
+     * @param {string} tagString 
+     */
+    setTagsFromTagString(tagString){
 
     }
 
-    addTagByPrefix(prefix, tag){
-        
+    getTagStringFromTags(){
+        // refer to logic used in Gauntlet, see:
+        // https://github.com/BBuchholz/Gauntlet/blob/master/app/src/main/java/com/nineworldsdeep/gauntlet/mnemosyne/v5/MediaListItem.java
     }
 
     setMetaDataByKey(key, val) {
