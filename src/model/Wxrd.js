@@ -3,10 +3,10 @@ const { v4: uuidv4 } = require('uuid');
 class Wxrd {
 
     constructor(defaultAlias) {
-        this.uuid = this.generateUuid();
-        this.createdAt = this.generateTimestamp();
         this.metaData = new Map();
         this.setAlias(defaultAlias);
+        this.setCreatedAt(this.generateTimestamp());
+        this.setUuid(this.generateUuid());
     }
 
     generateTimestamp() {
@@ -25,9 +25,12 @@ class Wxrd {
      */
     setTagsFromTagString(tagString){
 
+        let existingTags = toTagList(getTags());
+        let newTags = toTagList(tagString);        
     }
 
     getTagStringFromTags(){
+        // TODO:
         // refer to logic used in Gauntlet, see:
         // https://github.com/BBuchholz/Gauntlet/blob/master/app/src/main/java/com/nineworldsdeep/gauntlet/mnemosyne/v5/MediaListItem.java
     }
@@ -55,12 +58,32 @@ class Wxrd {
         this.setMetaDataByKey("alias", aliasValue);
     }
 
+    setCreatedAt(createdAt) {
+        this.setMetaDataByKey("createdAt", createdAt);
+    }
+
+    /**
+     * @returns {string} Date createdAt in ISO string format (as provided
+     * by the standard Date.toISOString() method)
+     */
+    getCreatedAt() {
+        return this.getMetaDataByKey("createdAt");
+    }
+
     getAllAliases(){
         return this.metaData.get("alias").map((x) => x.value);
     } 
 
     getUuid(){
-        return this.uuid;
+        return this.getMetaDataByKey("uuid");
+    }
+
+    /**
+     * 
+     * @param {string} uuid to set 
+     */
+    setUuid(uuid){
+        this.setMetaDataByKey("uuid", uuid);
     }
 }
 

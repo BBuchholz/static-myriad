@@ -1,12 +1,13 @@
 import LogEntry from './LogEntry';
-import Wxrd from './Wxrd';
 
-test('should set default alias and uuid from constructor', () => {
+test('should set default alias, uuid, and content from constructor', () => {
 
-    let title = "Record Entry: 2021-04-29";
-    let testWxrd = new Wxrd(title);
-    let testEntry = new LogEntry(testWxrd);
+    let titlePrefix = "Log Entry: ";
+    let body = "This is a test entry";
+    let testEntry = new LogEntry(body);
 
-    expect(testEntry.getDefaultAliasValue()).toBe(title);
-    expect(testWxrd.getUuid()).toBeDefined();
+    expect(testEntry.getDefaultAliasValue()).toContain(titlePrefix);
+    expect(testEntry.getUuid()).toBeDefined();
+    expect(testEntry.getBody()).toBe(body);
+    
 });

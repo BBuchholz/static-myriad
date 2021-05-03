@@ -5,7 +5,7 @@ import OldMyriadNavBar from './OldMyriadNavBar';
 import OldMyriadXmlIOPanel from './OldMyriadXmlIOPanel';
 import OldMyriadLogEntryForm from './OldMyriadLogEntryForm';
 import MyriadNavBarMain from './MyriadNavBarMain';
-import Wxrds from './Wxrds';
+import WxrdsView from './WxrdsView';
 import LogEntries from './LogEntries';
 
 import React from 'react';
@@ -26,7 +26,7 @@ function App() {
                     <h2>
                         <Switch>
                             <Route path="/wxrds">
-                                <Wxrds />
+                                <WxrdsView />
                             </Route>
                             <Route path="/entries">
                                 <LogEntries />

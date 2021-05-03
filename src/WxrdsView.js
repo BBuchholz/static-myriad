@@ -7,12 +7,12 @@ import {
   useParams
 } from "react-router-dom";
 
-function Wxrds() {
+function WxrdsView() {
   let match = useRouteMatch();
 
   return (
     <div>
-      <h2>Wxrds</h2>
+      <h2>WxrdsView</h2>
 
       <ul>
         <li>
@@ -46,4 +46,4 @@ function Wxrd() {
   return <h3>Requested Wxrd UUID: {wxrdUuid}</h3>;
 }
 
-export default Wxrds;
+export default WxrdsView;

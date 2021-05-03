@@ -5,11 +5,19 @@ class LogEntry{
     /**
      * Wraps an existing Wxrd as a LogEntry with all
      * relevant methods available to it
-     * @param {Wxrd} wxrd - the wxrd for the entry
+     * @param {string} content - the content for the entry
      */
-    constructor(wxrd){
-        this.wxrd = wxrd;
-        this.setTitle(wxrd.getDefaultAliasValue());
+    constructor(content){
+        
+        this.wxrd = new Wxrd("Log Entry");
+        let timestamp = this.wxrd.getCreatedAt();
+        //modify default alias to include timestamp
+        let titleAlias = "Log Entry: " + timestamp;
+        this.wxrd.setAlias(titleAlias);
+        this.setTitle(titleAlias);
+        
+        //set content
+        this.setBody(content);
     }
 
     getDefaultAliasValue(){
