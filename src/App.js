@@ -7,6 +7,7 @@ import OldMyriadLogEntryForm from './OldMyriadLogEntryForm';
 import MyriadNavBarMain from './MyriadNavBarMain';
 import WxrdsView from './WxrdsView';
 import LogEntries from './LogEntries';
+import NotesView from './NotesView';
 
 import React from 'react';
 import { 
@@ -39,6 +40,9 @@ function App() {
                             </Route>
                             <Route path="/log-entry">
                                 <OldMyriadLogEntryForm />
+                            </Route>
+                            <Route path="/notes">
+                                <NotesView />
                             </Route>
                             <Route path="/">
                                 <SplashScreen />

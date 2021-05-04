@@ -16,6 +16,7 @@ function MyriadNavBarMain() {
                 <Nav.Link href="/wxrds">Wxrds</Nav.Link>
                 <Nav.Link href="/xmlio">XML I/O</Nav.Link>
                 <Nav.Link href="/">About</Nav.Link>
+                <Nav.Link href="/notes">Notes</Nav.Link>
             </Nav>
         </Navbar.Collapse>
     </Navbar>
