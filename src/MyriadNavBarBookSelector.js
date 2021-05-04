@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
 import DemoContext from "./context/DemoContext";
+import BookShelf from './context/BookShelf';
 import {
     Form,
 } from 'react-bootstrap';
@@ -8,15 +9,35 @@ const selectedBookTitle = {
     bookTitle: "Demo Book 1"
 }
 
+export const generateOptionsFromBookshelf = () => {
+
+    const output = [];
+
+    for(const book in BookShelf){
+        output.push( 
+            <option key={book} value={book}>{BookShelf[book].bookTitle}</option>
+        )
+    }
+
+    return output;
+}
+
 const MyriadNavBarBookSelector = () => {
-        return(
-            <Form inline>
-                <Form.Control as="select">
-                    <option>Demo Book 1</option>
-                    <option>Demo Book 2</option>
-                    <option>Demo Book 3</option>
-                </Form.Control>
-            </Form>
+
+    const handleChange = (event) => {
+        window.alert(event.target.value);
+    }
+
+
+    const demoKey = useContext(DemoContext)[0];
+    const currentBook = BookShelf[demoKey];
+
+    return(
+        <Form inline>
+            <Form.Control as="select" onChange={handleChange}>
+                {generateOptionsFromBookshelf()}
+            </Form.Control>
+        </Form>
     );
 }
 
