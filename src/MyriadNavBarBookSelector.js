@@ -25,12 +25,11 @@ export const generateOptionsFromBookshelf = () => {
 const MyriadNavBarBookSelector = () => {
 
     const handleChange = (event) => {
-        window.alert(event.target.value);
+        setDemoKey(event.target.value);
     }
 
 
-    const demoKey = useContext(DemoContext)[0];
-    const currentBook = BookShelf[demoKey];
+    const [demoKey, setDemoKey] = useContext(DemoContext);
 
     return(
         <Form inline>
