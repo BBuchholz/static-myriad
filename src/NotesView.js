@@ -14,7 +14,7 @@ class NotesView extends React.Component {
                     <ul>
                         <li>
                             <NotesUrlProjectEntry 
-                                url="https://docs.google.com/document/d/1fyKeasedp29uMHCEsaVNCLMff63d2iYdbM-64RKnOHo/edit?usp=sharing" 
+                                url="https://docs.google.com/spreadsheets/d/1Rqqi81pQhz-yTJfFenmzn1Kr8QQdTGz5HRUFC1K9-hc/edit?usp=sharing" 
                                 text="Click This Link For Current Work"
                             />
                         </li>
