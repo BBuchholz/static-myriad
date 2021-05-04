@@ -3,6 +3,7 @@ import {
     Nav,
     Navbar,
 } from 'react-bootstrap';
+import MyriadNavBarBookSelector from './MyriadNavBarBookSelector';
 
 function MyriadNavBarMain() {
   
@@ -17,6 +18,7 @@ function MyriadNavBarMain() {
                 <Nav.Link href="/xmlio">XML I/O</Nav.Link>
                 <Nav.Link href="/">About</Nav.Link>
                 <Nav.Link href="/notes">Notes</Nav.Link>
+                <MyriadNavBarBookSelector />
             </Nav>
         </Navbar.Collapse>
     </Navbar>

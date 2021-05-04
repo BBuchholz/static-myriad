@@ -10,7 +10,7 @@ import LogEntries from './LogEntries';
 import NotesView from './NotesView';
 import DemoContext from './context/DemoContext';
 
-import React from 'react';
+import React, { useState } from 'react';
 import { 
   BrowserRouter as Router,
   Switch,
@@ -20,9 +20,9 @@ import {
 import Container from 'react-bootstrap/Container';
 
 function App() {
-    const demoBook = "demoBook";
+    const demoHook = useState("demo");
     return (
-        <DemoContext.Provider value= {demoBook}>
+        <DemoContext.Provider value= {demoHook}>
             <Router>
                 <Container fluid="md">
                     <MyriadNavBarMain />
