@@ -8,6 +8,7 @@ import MyriadNavBarMain from './MyriadNavBarMain';
 import WxrdsView from './WxrdsView';
 import LogEntries from './LogEntries';
 import NotesView from './NotesView';
+import DemoContext from './context/DemoContext';
 
 import React from 'react';
 import { 
@@ -19,38 +20,41 @@ import {
 import Container from 'react-bootstrap/Container';
 
 function App() {
+    const demoBook = "demoBook";
     return (
-        <Router>
-            <Container fluid="md">
-                <MyriadNavBarMain />
-                <OldMyriadNavBar />
-                    <h2>
-                        <Switch>
-                            <Route path="/wxrds">
-                                <WxrdsView />
-                            </Route>
-                            <Route path="/entries">
-                                <LogEntries />
-                            </Route>
-                            <Route path="/xmlio">
-                                <OldMyriadXmlIOPanel />
-                            </Route>
-                            <Route path="/log-entry-prev">
-                                <SandboxEntryForm />
-                            </Route>
-                            <Route path="/log-entry">
-                                <OldMyriadLogEntryForm />
-                            </Route>
-                            <Route path="/notes">
-                                <NotesView />
-                            </Route>
-                            <Route path="/">
-                                <SplashScreen />
-                            </Route>
-                        </Switch>
-                    </h2>
-            </Container>
-        </Router>
+        <DemoContext.Provider value= {demoBook}>
+            <Router>
+                <Container fluid="md">
+                    <MyriadNavBarMain />
+                    <OldMyriadNavBar />
+                        <h2>
+                            <Switch>
+                                <Route path="/wxrds">
+                                    <WxrdsView />
+                                </Route>
+                                <Route path="/entries">
+                                    <LogEntries />
+                                </Route>
+                                <Route path="/xmlio">
+                                    <OldMyriadXmlIOPanel />
+                                </Route>
+                                <Route path="/log-entry-prev">
+                                    <SandboxEntryForm />
+                                </Route>
+                                <Route path="/log-entry">
+                                    <OldMyriadLogEntryForm />
+                                </Route>
+                                <Route path="/notes">
+                                    <NotesView />
+                                </Route>
+                                <Route path="/">
+                                    <SplashScreen />
+                                </Route>
+                            </Switch>
+                        </h2>
+                </Container>
+            </Router>
+        </DemoContext.Provider>
     );
 }
 
