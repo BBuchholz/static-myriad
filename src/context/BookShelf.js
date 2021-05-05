@@ -1,6 +1,14 @@
 const BookShelf = {
     demo: {
-        bookTitle: "demo book 1"
+        bookTitle: "demo book 1",
+        entries: [
+            {
+                entryTitle: "something"
+            },
+            {
+                entryTitle: "somethingElse"
+            }
+        ]
     },
     demo2: {
         bookTitle: "demo book 2",

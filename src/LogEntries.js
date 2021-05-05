@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 
 import LogEntriesNew from './LogEntriesNew';
+import LogEntriesListView from './LogEntriesListView';
 
 function LogEntries() {
   let match = useRouteMatch();
@@ -36,6 +37,7 @@ function LogEntries() {
                 </li>
             </ul>
             <h3>Please select a LogEntry.</h3>
+            <LogEntriesListView />
         </Route>
       </Switch>
     </div>
