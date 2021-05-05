@@ -6,7 +6,7 @@ const BookShelf = {
                 entryTitle: "something"
             },
             {
-                entryTitle: "somethingElse"
+                entryTitle: "something else"
             }
         ]
     },

@@ -16,7 +16,7 @@ export const generateOptionsFromBookshelf = () => {
     for(const book in BookShelf){
         output.push( 
             <option key={book} value={book}>{BookShelf[book].bookTitle}</option>
-        )
+        );
     }
 
     return output;
