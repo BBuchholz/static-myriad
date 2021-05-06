@@ -3,7 +3,9 @@ const BookShelf = {
         bookTitle: "demo book 1",
         entries: [
             {
-                entryTitle: "something"
+                entryTitle: "something",
+                entryBody: "Some Text",
+                entryTagString: "tag, another tag"
             },
             {
                 entryTitle: "something else"

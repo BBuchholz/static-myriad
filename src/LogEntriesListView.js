@@ -8,6 +8,30 @@ const LogEntriesListView = () => {
     const demoKey = useContext(DemoContext)[0];
     const currentBook = BookShelf[demoKey];
     
+    const renderEntry = (entry) => {
+        const renderedEntry = [];
+
+        if(entry.entryTitle){
+            renderedEntry.push(
+                <h3>{entry.entryTitle}</h3>                
+            );
+        }
+
+        if(entry.entryTagString){
+            renderedEntry.push(
+                <p>{entry.entryTagString}</p>
+            );
+        }
+
+        if(entry.entryBody){
+            renderedEntry.push(
+                <p>{entry.entryBody}</p>                
+            );
+        }
+
+        return renderedEntry;
+    }; 
+
     // generate entries
     const renderedEntries = [];
     let entries = "not found";
@@ -16,7 +40,7 @@ const LogEntriesListView = () => {
 
         for(const entry of currentBook.entries){
             renderedEntries.push(
-               <ListGroup.Item>{entry.entryTitle}</ListGroup.Item> 
+               <ListGroup.Item>{renderEntry(entry)}</ListGroup.Item> 
             );
         }
     }
